@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Discovery Hub | Visual Design Guide</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Una guía visual interactiva para descubrir estilos de diseño modernos. Neobrutalismo, Minimalismo, Material Design y más.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* 
+           CSS DESIGN SYSTEM 
+           Tokens y Utilidades
+        */
+        :root {
+            --bg-main: #fdfdfd;
+            --text-main: #111827;
+            --accent-blue: #3b82f6;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.5;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,17%,0.03) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(225,39%,30%,0.03) 0, transparent 50%);
+        }
+
+        header {
+            padding: 100px 20px 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -3px;
+            line-height: 0.9;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #111827 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Layout Grid */
+        .discovery-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+        }
+
+        .discovery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        /* Card Architecture */
+        .style-card {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.04);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .style-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-area {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            background: #f3f4f6;
+            overflow: hidden;
+        }
+
+        .info-area {
+            padding: 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .style-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .style-desc {
+            font-size: 0.95rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f3f4f6;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #374151;
+        }
+
+        /* ---------------------------------------------------------
+           SPECIFIC STYLE CLASSES 
+        --------------------------------------------------------- */
+
+        /* 1. Neobrutalista */
+        .demo-neobrutalist {
+            background: #ffde03;
+            border: 4px solid #000;
+            padding: 20px;
+            font-weight: 900;
+            box-shadow: 8px 8px 0 #000;
+            transform: rotate(-2deg);
+        }
+
+        /* 2. Suizo */
+        .demo-swiss {
+            width: 100%; height: 100%;
+            background: #fff;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+        }
+        .swiss-box { background: #e31e24; grid-row: span 2; }
+        .swiss-text { font-weight: 900; font-size: 2rem; color: #000; line-height: 0.8; }
+
+        /* 3. Editorial */
+        .demo-editorial {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-style: italic;
+            color: #1a1a1a;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        /* 4. Glassmorphism */
+        .glass-bg {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .glass-demo {
+            width: 140px; height: 140px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+        }
+
+        /* 5. Retro-futurista */
+        .demo-retro {
+            background: #0d0221;
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .retro-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            color: transparent;
+            -webkit-text-stroke: 1px #ff00ff;
+            text-shadow: 0 0 20px #ff00ff;
+        }
+
+        /* 6. Bauhaus */
+        .demo-bauhaus { display: flex; gap: 15px; align-items: center; }
+        .bh-sq { width: 50px; height: 50px; background: #ed1c24; }
+        .bh-ci { width: 50px; height: 50px; background: #fff200; border-radius: 50%; }
+        .bh-tr { width: 0; height: 0; border-left: 25px solid transparent; border-right: 25px solid transparent; border-bottom: 50px solid #2e3192; }
+
+        /* 7. Art Deco */
+        .demo-artdeco {
+            border: 1px solid #d4af37;
+            padding: 20px;
+            background: #111;
+            display: flex; gap: 10px; flex-direction: column;
+        }
+        .art-line { height: 1px; background: #d4af37; width: 60px; }
+
+        /* 11. Neumórfico */
+        .demo-neumorphic {
+            width: 120px; height: 120px;
+            background: #e0e0e0;
+            border-radius: 30px;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+
+        /* 17. Orgánico */
+        .demo-organic {
+            width: 150px; height: 150px;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            border-radius: 53% 47% 70% 30% / 30% 30% 70% 70%;
+            animation: blobAnim 5s infinite ease-in-out;
+        }
+        @keyframes blobAnim {
+            0%, 100% { border-radius: 53% 47% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 30% 70% 30% 70% / 70% 30% 70% 30%; }
+        }
+
+        /* 22. Kinetic */
+        .demo-kinetic {
+            width: 60px; height: 60px;
+            background: #ef4444;
+            animation: kineticMove 2s infinite alternate ease-in-out;
+        }
+        @keyframes kineticMove {
+            from { transform: translateX(-40px) rotate(0deg); }
+            to { transform: translateX(40px) rotate(180deg); }
+        }
+
+        /* 23. Gradiente Moderno */
+        .demo-gradient {
+            width: 100%; height: 100%;
+            background: radial-gradient(at 0% 0%, #7c3aed 0%, transparent 50%),
+                        radial-gradient(at 100% 0%, #ec4899 0%, transparent 50%),
+                        radial-gradient(at 50% 100%, #3b82f6 0%, transparent 50%);
+        }
+
+        /* 24. Tipografía Primero */
+        .demo-typo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 6rem;
+            line-height: 0.7;
+            letter-spacing: -8px;
+            color: #000;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .discovery-container { padding: 0 20px 60px; }
+            h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="tag" style="background:#dee2e6; margin-bottom: 15px;">v1.0 • Explorer</span>
+        <h1>Style Discovery</h1>
+        <p class="subtitle">Selecciona el lenguaje visual de tu próximo producto digital. 25 estilos curados por expertos.</p>
+    </header>
+
+    <main class="discovery-container">
+        <div class="discovery-grid" id="mainGrid">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; opacity: 0.5; font-size: 0.8rem;">
+        &copy; 2026 Style Discovery Hub. Powered by Antigravity AI.
+    </footer>
+
+    <script>
+        /**
+         * DATA: Los 25 estilos especificados con su configuración visual.
+         */
+        const designStyles = [
+            {
+                name: "Neobrutalista",
+                desc: "Estética cruda y audaz que utiliza bordes gruesos, sombras sin suavizar y colores de alto contraste.",
+                demoClass: "demo-neobrutalist",
+                content: "CONTRASTE",
+                bg: "#fff"
+            },
+            {
+                name: "Suizo (International Typographic Style)",
+                desc: "Claridad, legibilidad y objetividad mediante el uso de cuadrículas matemáticas y tipos Sans-Serif.",
+                demoClass: "demo-swiss",
+                content: `<div class="swiss-box"></div><div class="swiss-text">GRID<br>SYSTEM</div>`,
+                bg: "#fff"
+            },
+            {
+                name: "Editorial",
+                desc: "Inspirado en la elegancia de las revistas físicas. Tipografía Serif refinada y generosos espacios en blanco.",
+                demoClass: "demo-editorial",
+                content: "Vogue",
+                bg: "#fafafa"
+            },
+            {
+                name: "Glassmorphism",
+                desc: "Superposición de capas translúcidas que crean un efecto de cristal esmerilado mediante desenfoque de fondo.",
+                demoClass: "glass-demo",
+                wrapClass: "glass-bg",
+                content: "",
+                bg: "#000"
+            },
+            {
+                name: "Retro-futurista",
+                desc: "Una visión nostálgica del futuro. Luces de neón, gradientes oscuros y estética Synthwave/80s.",
+                demoClass: "demo-retro",
+                content: `<div class="retro-title">CYBER</div>`,
+                bg: "#0d0221"
+            },
+            {
+                name: "Bauhaus",
+                desc: "Simplicidad geométrica y colores primarios. La forma sigue estrictamente a la función.",
+                demoClass: "demo-bauhaus",
+                content: `<div class="bh-sq"></div><div class="bh-ci"></div><div class="bh-tr"></div>`,
+                bg: "#fff"
+            },
+            {
+                name: "Art Deco",
+                desc: "Lujo clásico. Patrones geométricos intrincados, simetría perfecta y acentos dorados sobre fondos oscuros.",
+                demoClass: "demo-artdeco",
+                content: `<div class="art-line"></div><div style="color:#d4af37; font-family:serif; letter-spacing:4px">LUXE</div><div class="art-line"></div>`,
+                bg: "#111"
+            },
+            {
+                name: "Minimalista",
+                desc: "Eliminación de lo superfluo. Solo lo esencial permanece, priorizando la legibilidad y el orden.",
+                content: `<div style="font-weight:200; font-size:2rem; opacity:0.3; letter-spacing:4px">PURE</div>`,
+                bg: "#fff"
+            },
+            {
+                name: "Flat Design",
+                desc: "Eliminación de cualquier efecto tridimensional. Colores planos, iconos 2D y simplicidad absoluta.",
+                content: `<div style="width:80px; height:80px; background:#10b981; border-radius:15px"></div>`,
+                bg: "#ecfdf5"
+            },
+            {
+                name: "Material Design",
+                desc: "Reglas inspiradas en la física del papel. Elevación, sombras suaves y transiciones interactivas fundamentadas.",
+                content: `<div style="width:140px; height:80px; background:#fff; border-radius:8px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);"></div>`,
+                bg: "#f3f4f6"
+            },
+            {
+                name: "Neumórfico",
+                desc: "Efectos 'soft pop' donde los elementos parecen extruirse del fondo mediante sombras duales cóncavas y convexas.",
+                demoClass: "demo-neumorphic",
+                content: "",
+                bg: "#e0e0e0"
+            },
+            {
+                name: "Monocromático",
+                desc: "Uso estratégico de diferentes matices e intensidades de un único color base para una armonía total.",
+                content: `<div style="display:flex; gap:8px"><div style="width:40px; height:80px; background:#1e3a8a"></div><div style="width:40px; height:80px; background:#3b82f6"></div><div style="width:40px; height:80px; background:#93c5fd"></div></div>`,
+                bg: "#eff6ff"
+            },
+            {
+                name: "Escandinavo",
+                desc: "Funcionalidad acogedora. Tonos madera clara, grises suaves y una sensación de calidez orgánica.",
+                content: `<div style="width:120px; height:120px; background:#e5dace; border-radius:12px; border:6px solid #fff"></div>`,
+                bg: "#f9f6f2"
+            },
+            {
+                name: "Japandi",
+                desc: "Fusión del minimalismo japonés con el nórdico. Equilibrio perfecto entre rusticidad y modernidad.",
+                content: `<div style="width:2px; height:120px; background:#8d6e63;"></div><div style="width:100px; height:120px; background:#d7ccc8; margin-left:10px; border-radius:2px"></div>`,
+                bg: "#ece7e1"
+            },
+            {
+                name: "Dark Mode First",
+                desc: "Diseño optimizado para pantallas oscuras, utilizando altos contrastes controlados y luces vibrantes sutiles.",
+                content: `<div style="color:#10b981; font-family:monospace; background:#000; padding:15px; border-radius:8px; border: 1px solid #333;">{ "mode": "dark" }</div>`,
+                bg: "#111827"
+            },
+            {
+                name: "Modernista",
+                desc: "Racionalidad y pureza. Se deshace del ornamento para centrarse en la estructura y el propósito comercial.",
+                content: `<div style="border-left: 8px solid #000; padding: 20px; font-weight:700;">FORM OVER<br>FUNCTION</div>`,
+                bg: "#fff"
+            },
+            {
+                name: "Orgánico / Fluido",
+                desc: "Uso de formas 'blob' y curvas suaves que emulan la naturaleza. Evita esquinas rectas y dureza visual.",
+                demoClass: "demo-organic",
+                content: "",
+                bg: "#fff"
+            },
+            {
+                name: "Profesional Corporativo",
+                desc: "Paletas de azul marino y gris. Tipografías sólidas que transmiten fiabilidad, seguridad y formalidad.",
+                content: `<div style="color:#1e3a8a; display:flex; align-items:center; gap:10px;"><div style="width:40px; height:40px; border:4px solid #1e3a8a"></div><span style="font-weight:800; font-family:Inter">ENTERPRISE</span></div>`,
+                bg: "#f8fafc"
+            },
+            {
+                name: "Tech Forward",
+                desc: "Inspirado en la innovación. Micro-animaciones, glows tecnológicos y una sensación de 'maquinaria de precisión'.",
+                content: `<div style="width:100px; height:2px; background:linear-gradient(90deg, transparent, #3b82f6, transparent); animation: scan 2s infinite"></div><style>@keyframes scan {0%{transform:translateY(-40px)} 100%{transform:translateY(40px)}}</style>`,
+                bg: "#020617"
+            },
+            {
+                name: "Minimalismo de Lujo",
+                desc: "Espaciado premium, fuentes ultra-light y materiales visuales que sugieren exclusividad y alto valor.",
+                content: `<div style="font-family:'Outfit'; font-weight:200; letter-spacing:15px; color:#9c855a">MUSEUM</div>`,
+                bg: "#fff"
+            },
+            {
+                name: "Neo-Geo",
+                desc: "Renacimiento de la geometría plana. Patrones repetitivos y estructuras matemáticas visibles.",
+                content: `<div style="width:120px; height:120px; background:radial-gradient(#000 20%, transparent 20%) 0 0 / 20px 20px, radial-gradient(#000 20%, transparent 20%) 10px 10px / 20px 20px; background-color:#fff"></div>`,
+                bg: "#fff"
+            },
+            {
+                name: "Kinetic",
+                desc: "Diseño que incorpora el movimiento como parte del lenguaje visual. Dinamismo y energía constante.",
+                demoClass: "demo-kinetic",
+                content: "",
+                bg: "#fef2f2"
+            },
+            {
+                name: "Gradiente Moderno (Mesh Gradient)",
+                desc: "Mezclas fluidas de múltiples colores vibrantes para fondos envolventes y dinámicos.",
+                demoClass: "demo-gradient",
+                content: "",
+                bg: "#000"
+            },
+            {
+                name: "Tipografía Primero",
+                desc: "Donde el texto deja de ser solo lectura para convertirse en el elemento gráfico y visual central.",
+                demoClass: "demo-typo",
+                content: "THE<br>TYPE",
+                bg: "#fff"
+            },
+            {
+                name: "Metropolitano",
+                desc: "Look urbano y arquitectónico. Sofisticación cosmopolita con uso inteligente de fotografía e imágenes de ciudad.",
+                content: `<div style="position:absolute; bottom:20px; left:20px; color:#fff; font-weight:900; z-index:2; text-shadow:2px 2px 4px rgba(0,0,0,0.5)">ARCH VIZ</div>`,
+                bgImg: "metropolitan_cityscape.png"
+            }
+        ];
+
+        const grid = document.getElementById('mainGrid');
+
+        // Render function
+        designStyles.forEach((style, index) => {
+            const card = document.createElement('article');
+            card.className = 'style-card';
+            card.style.animationDelay = `${index * 0.05}s`;
+
+            const previewInner = style.wrapClass ? `<div class="${style.wrapClass}">${style.content || `<div class="${style.demoClass}"></div>`}</div>` : (style.content || `<div class="${style.demoClass}"></div>`);
+            
+            let previewStyle = `background: ${style.bg};`;
+            if (style.bgImg) {
+                previewStyle = `background-image: url('${style.bgImg}'); background-size: cover; background-position: center;`;
+            }
+
+            card.innerHTML = `
+                <div class="preview-area" style="${previewStyle}">
+                    <div style="position:relative; z-index:2; display:flex; justify-content:center; align-items:center; width:100%; height:100%;">
+                        ${previewInner}
+                    </div>
+                </div>
+                <div class="info-area">
+                    <div>
+                        <h2 class="style-name">${style.name}</h2>
+                        <p class="style-desc">${style.desc}</p>
+                    </div>
+                    <div>
+                        <span class="tag">#Style_${index + 1}</span>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
