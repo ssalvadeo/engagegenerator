@@ -1,0 +1,454 @@
+/* ============================================================
+   ULTRA-MOTION TECH FORWARD — STYLES.CSS
+   Estética: Dark Mode Premium + Glassmorphism + Mesh Gradients
+   Paleta: #050505 (Background), #00ff41 (Neon Green), #007aff (Electric Blue)
+   ============================================================ */
+
+:root {
+  /* --- Colors --- */
+  --bg-deep: #050505;
+  --bg-darker: #0a0a0a;
+  --neon-green: #00ff41;
+  --electric-blue: #007aff;
+  --text-white: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --neon-green-glow: rgba(0, 255, 65, 0.3);
+  --electric-blue-glow: rgba(0, 122, 255, 0.3);
+
+  /* --- Typography --- */
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Lexend', sans-serif;
+
+  /* --- Spacing --- */
+  --space-unit: 1rem;
+  --section-pad: 8rem;
+
+  /* --- Transitions --- */
+  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   1. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-white);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================
+   2. MESH GRADIENT BACKGROUND
+   ============================================================ */
+.mesh-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(at 0% 0%, rgba(0, 122, 255, 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(0, 255, 65, 0.1) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(123, 31, 162, 0.15) 0, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(0, 122, 255, 0.1) 0, transparent 50%);
+  filter: blur(80px);
+  animation: meshMove 20s ease infinite alternate;
+}
+
+@keyframes meshMove {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1) translate(2%, 2%); }
+}
+
+/* ============================================================
+   3. REVEAL ANIMATIONS
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-smooth);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   4. HEADER & LOGO
+   ============================================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1.5rem 0;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--text-white);
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--neon-green);
+  border-radius: 50%;
+  position: relative;
+  animation: rotateShutter 8s linear infinite;
+}
+
+.logo-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: var(--neon-green);
+  transform: translate(-50%, -50%);
+}
+
+.logo-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--neon-green);
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotateShutter {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--neon-green);
+}
+
+/* ============================================================
+   5. HERO SECTION
+   ============================================================ */
+.hero {
+  padding-top: 12rem;
+  padding-bottom: var(--section-pad);
+  text-align: center;
+  position: relative;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--text-white) 0%, var(--electric-blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.btn-magnetic {
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  background: var(--electric-blue);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 500px;
+  position: relative;
+  transition: var(--transition-smooth);
+  box-shadow: 0 0 20px var(--electric-blue-glow);
+  animation: pulseMagnetic 2s infinite;
+}
+
+@keyframes pulseMagnetic {
+  0% { box-shadow: 0 0 0 0 rgba(0, 122, 255, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(0, 122, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 122, 255, 0); }
+}
+
+.btn-magnetic:hover {
+  transform: scale(1.05);
+  background: var(--neon-green);
+  box-shadow: 0 0 30px var(--neon-green-glow);
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.3;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-30px) rotate(10deg); }
+}
+
+/* ============================================================
+   6. BENTO GRID — PROBLEM SECTION
+   ============================================================ */
+.problem {
+  padding: var(--section-pad) 0;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  margin-bottom: 4rem;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+  gap: 1.5rem;
+}
+
+.bento-item {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: var(--transition-smooth);
+}
+
+.bento-item:hover {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 40px var(--neon-green-glow);
+  transform: scale(1.02);
+}
+
+.bento-item--large {
+  grid-column: span 2;
+}
+
+.bento-item h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bento-item p {
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   7. HOW IT WORKS — ANIMATED PROCESS
+   ============================================================ */
+.how-it-works {
+  padding: var(--section-pad) 0;
+}
+
+.process__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+.process__step {
+  text-align: center;
+  position: relative;
+}
+
+.process__number {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-darker);
+  border: 2px solid var(--glass-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.process__step.active .process__number {
+  border-color: var(--neon-green);
+  color: var(--neon-green);
+  box-shadow: 0 0 20px var(--neon-green-glow);
+}
+
+.process__step h4 { margin-bottom: 0.5rem; }
+.process__step p { font-size: 0.9rem; color: var(--text-muted); }
+
+/* ============================================================
+   8. SERVICES GRID
+   ============================================================ */
+.services {
+  padding: var(--section-pad) 0;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--electric-blue);
+  box-shadow: 0 0 30px var(--electric-blue-glow);
+}
+
+.service-card i {
+  font-size: 2rem;
+  color: var(--electric-blue);
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   9. DIFFERENTIAL — GRADIENT BORDER
+   ============================================================ */
+.differential {
+  padding: var(--section-pad) 0;
+}
+
+.gradient-block {
+  padding: 4px;
+  background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--neon-green));
+  background-size: 200% 100%;
+  border-radius: 2.5rem;
+  animation: gradientFlow 4s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.gradient-block__inner {
+  background: var(--bg-deep);
+  border-radius: calc(2.5rem - 4px);
+  padding: 5rem 3rem;
+  text-align: center;
+}
+
+.gradient-block__title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+/* ============================================================
+   10. FOOTER
+   ============================================================ */
+.footer {
+  padding: 4rem 0;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+}
+
+.footer__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .bento-item--large {
+    grid-column: span 1;
+  }
+  .section-title { font-size: 2.5rem; }
+  --section-pad: 4rem;
+}
