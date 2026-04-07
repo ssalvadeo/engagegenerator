@@ -1,600 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LeadGenerator — Sistema de Performance Creativo. Creamos contenido que convierte, con métricas claras y velocidad de ejecución que multiplica tu crecimiento." />
-  <meta name="keywords" content="LeadGenerator, performance creativo, marketing de contenidos, estrategia digital, leads, generación de demanda" />
-  <meta property="og:title" content="LeadGenerator — Sistema de Performance Creativo" />
-  <meta property="og:description" content="No somos una agencia tradicional. Somos un sistema de performance creativo." />
-  <meta property="og:type" content="website" />
-  <title>LeadGenerator — Sistema de Performance Creativo</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;900&family=Outfit:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadGenerator | ULTRA-MOTION SYSTEM</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lexend:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ============================================================
-       HEADER / NAV
-  ============================================================ -->
-  <header class="site-header" id="site-header" role="banner">
-    <nav class="site-header__nav nav" aria-label="Navegación principal">
-      <a href="#hero" class="nav__logo" aria-label="LeadGenerator — inicio">
-        <img src="logo.png" alt="LeadGenerator Logo" style="height: 36px; width: auto;">
-        <span class="nav__logo-name">LeadGenerator</span>
-      </a>
+    <div class="mesh-gradient"></div>
 
-      <!-- Ticker horizontal para llenar el "espacio vacío" con movimiento estratégico -->
-      <div class="nav__ticker" aria-hidden="true">
-        <div class="nav__ticker-track">
-          <span>CRECER ES LA ÚNICA OPCIÓN • CRECIMIENTO • PERFORMANCE EN TIEMPO REAL • CONVERSIÓN • CREATIVIDAD • ESTRATEGIA DIGITAL • </span>
-          <span>CRECER ES LA ÚNICA OPCIÓN • CRECIMIENTO • PERFORMANCE EN TIEMPO REAL • CONVERSIÓN • CREATIVIDAD • ESTRATEGIA DIGITAL • </span>
-        </div>
-      </div>
-
-      <ul class="nav__links" role="list">
-        <li><a href="#problem" class="nav__link">Problema</a></li>
-        <li><a href="#solution" class="nav__link">Solución</a></li>
-        <li><a href="#differential" class="nav__link">Diferencial</a></li>
-        <li><a href="#services" class="nav__link">Servicios</a></li>
-      </ul>
-      <a href="#contact" class="nav__cta btn btn--primary btn--small" id="nav-cta-btn">Hablemos</a>
-      <button class="nav__burger" id="nav-burger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="nav__burger-line"></span>
-        <span class="nav__burger-line"></span>
-        <span class="nav__burger-line"></span>
-      </button>
-    </nav>
-    <div class="nav__mobile-menu" id="mobile-menu" aria-hidden="true">
-      <ul class="nav__mobile-links" role="list">
-        <li><a href="#problem" class="nav__mobile-link">Problema</a></li>
-        <li><a href="#solution" class="nav__mobile-link">Solución</a></li>
-        <li><a href="#differential" class="nav__mobile-link">Diferencial</a></li>
-        <li><a href="#services" class="nav__mobile-link">Servicios</a></li>
-        <li><a href="#contact" class="nav__mobile-link nav__mobile-link--cta">Hablemos</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main id="main-content">
-
-    <!-- ============================================================
-         SECTION 1 · HERO
-    ============================================================ -->
-    <section class="hero" id="hero" aria-labelledby="hero-title">
-      <div class="hero__bg-decoration" aria-hidden="true">
-        <div class="blob blob--orange"></div>
-        <div class="blob blob--gray"></div>
-      </div>
-
-      <div class="hero__container container">
-        <div class="hero__grid">
-          <div class="hero__content">
-            <div class="hero__eyebrow reveal">
-              <span class="hero__eyebrow-line" aria-hidden="true"></span>
-              <p class="hero__eyebrow-text">Performance Creativo</p>
-            </div>
-
-            <h1 class="hero__title reveal reveal--delay-1" id="hero-title">
-              Sistema de<br />
-              <em class="hero__title-italic">Performance</em><br />
-              Creativo.
-            </h1>
-
-            <div class="hero__body reveal reveal--delay-2">
-              <p class="hero__description">
-                En un mercado saturado, la diferencia entre crecer y estancarse no es el presupuesto.
-                Es la precisión de tu sistema.
-              </p>
-              <div class="hero__actions">
-                <a href="#solution" class="btn btn--primary btn--large" id="hero-cta-primary">Descubrir el sistema</a>
-                <a href="#how-it-works" class="btn btn--ghost btn--large" id="hero-cta-secondary">Ver cómo funciona</a>
-              </div>
-              
-              <!-- Métricas para llenar el espacio "en blanco" verticalmente -->
-              <div class="hero__metrics reveal reveal--delay-3">
-                <div class="metric">
-                  <span class="metric__value">+15K</span>
-                  <span class="metric__label">Leads por mes</span>
-                </div>
-                <div class="metric">
-                  <span class="metric__value">2.4X</span>
-                  <span class="metric__label">ROI Promedio</span>
-                </div>
-                <div class="metric">
-                  <span class="metric__value">100%</span>
-                  <span class="metric__label">Auditado</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="hero__image-wrapper reveal reveal--delay-3">
-            <img src="hero.png" alt="Abstract motion art representing growth" class="hero__image">
-          </div>
-        </div>
-
-        <div class="hero__scroll-indicator" aria-hidden="true">
-          <span class="hero__scroll-line"></span>
-          <span class="hero__scroll-label">Scroll</span>
-        </div>
-      </div>
-
-      <div class="hero__editorial-number" aria-hidden="true">01</div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 2 · PROBLEMA
-    ============================================================ -->
-    <section class="problem" id="problem" aria-labelledby="problem-title">
-      <div class="problem__container container">
-
-        <header class="section-header reveal">
-          <span class="section-header__number" aria-hidden="true">02</span>
-          <div class="section-header__content">
-            <p class="section-header__eyebrow">El Diagnóstico</p>
-            <h2 class="section-header__title" id="problem-title">
-              Tres frenos que detienen tu crecimiento.
-            </h2>
-          </div>
-        </header>
-
-        <div class="problem__grid">
-
-          <article class="problem-card reveal reveal--delay-1" id="problem-card-content">
-            <div class="problem-card__number" aria-hidden="true">I</div>
-            <h3 class="problem-card__title">Falta de contenido estratégico</h3>
-            <p class="problem-card__description">
-              Publicas sin una dirección clara. Tu contenido existe, pero no trabaja para ti.
-              No genera conversaciones, no cualifica prospectos, no acorta el ciclo de venta.
-              Es ruido en lugar de señal.
-            </p>
-          </article>
-
-          <article class="problem-card reveal reveal--delay-2" id="problem-card-metrics">
-            <div class="problem-card__number" aria-hidden="true">II</div>
-            <h3 class="problem-card__title">Cero claridad en las métricas</h3>
-            <p class="problem-card__description">
-              Tienes actividad pero no resultados medibles. No sabes qué pieza de contenido
-              genera leads reales, cuánto cuesta cada cliente adquirido ni dónde se rompe
-              tu embudo. Operas con intuición cuando deberías operar con datos.
-            </p>
-          </article>
-
-          <article class="problem-card reveal reveal--delay-3" id="problem-card-speed">
-            <div class="problem-card__number" aria-hidden="true">III</div>
-            <h3 class="problem-card__title">Lentitud en la ejecución</h3>
-            <p class="problem-card__description">
-              Las ideas quedan atrapadas en reuniones, aprobaciones y revisiones
-              interminables. Cuando finalmente publicas, el momento óptimo ya pasó.
-              La velocidad no es opcional: es una ventaja competitiva que tu competencia
-              ya está aprovechando.
-            </p>
-          </article>
-
-        </div>
-
-        <div class="problem__footer reveal">
-          <p class="problem__closing-statement">
-            Si identificas al menos uno de estos tres patrones en tu operación,<br />
-            <strong>no necesitas más contenido. Necesitas un sistema.</strong>
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 3 · SOLUCIÓN
-    ============================================================ -->
-    <section class="solution" id="solution" aria-labelledby="solution-title">
-      <div class="solution__container container">
-
-        <header class="section-header section-header--inverted reveal">
-          <span class="section-header__number" aria-hidden="true">03</span>
-          <div class="section-header__content">
-            <p class="section-header__eyebrow">La Resolución</p>
-            <h2 class="section-header__title" id="solution-title">
-              Creamos contenido que convierte.
-            </h2>
-          </div>
-        </header>
-
-        <div class="solution__body reveal reveal--delay-1">
-          <p class="solution__lead">
-            No producimos contenido para llenar calendarios. Diseñamos piezas estratégicas
-            con un propósito específico en cada etapa del recorrido de tu cliente ideal.
-          </p>
-          <p class="solution__text">
-            Cada publicación, cada artículo, cada campaña que construimos responde a
-            una pregunta fundamental: <em>¿qué acción concreta queremos que tome el lector
-            después de consumir este contenido?</em>
-          </p>
-          <p class="solution__text">
-            Combinamos narrativa editorial con estructura de conversión. El resultado
-            es contenido que educa, genera confianza y mueve a la acción —
-            simultáneamente.
-          </p>
-        </div>
-
-        <div class="solution__metrics reveal reveal--delay-2">
-          <div class="metric" id="metric-leads">
-            <span class="metric__value">3×</span>
-            <p class="metric__label">más leads cualificados en los primeros 90 días</p>
-          </div>
-          <div class="metric__divider" aria-hidden="true"></div>
-          <div class="metric" id="metric-cycle">
-            <span class="metric__value">−40%</span>
-            <p class="metric__label">en el ciclo de venta promedio</p>
-          </div>
-          <div class="metric__divider" aria-hidden="true"></div>
-          <div class="metric" id="metric-speed">
-            <span class="metric__value">72h</span>
-            <p class="metric__label">de entrega para cada pieza de contenido</p>
-          </div>
-        </div>
-
-        <a href="#contact" class="solution__cta btn btn--white btn--large reveal reveal--delay-3" id="solution-cta-btn">
-          Quiero este sistema
-          <span class="btn__arrow" aria-hidden="true">→</span>
-        </a>
-
-      </div>
-
-      <div class="solution__editorial-number" aria-hidden="true">03</div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 4 · CÓMO FUNCIONA
-    ============================================================ -->
-    <section class="how-it-works" id="how-it-works" aria-labelledby="how-title">
-      <div class="how-it-works__container container">
-
-        <header class="section-header reveal">
-          <span class="section-header__number" aria-hidden="true">04</span>
-          <div class="section-header__content">
-            <p class="section-header__eyebrow">El Proceso</p>
-            <h2 class="section-header__title" id="how-title">
-              Cinco pasos hacia la máquina de crecimiento.
-            </h2>
-          </div>
-        </header>
-
-        <ol class="process-list" aria-label="Pasos del proceso">
-
-          <li class="process-step reveal reveal--delay-1" id="step-audit">
-            <div class="process-step__number" aria-hidden="true">01</div>
-            <div class="process-step__content">
-              <h3 class="process-step__title">Auditoría de Performance</h3>
-              <p class="process-step__description">
-                Analizamos tu contenido actual, tu embudo de ventas y la brecha entre
-                lo que produces y los resultados que obtienes. Identificamos exactamente
-                dónde estás perdiendo oportunidades y construimos un mapa de acción basado
-                en métricas reales, no en suposiciones.
-              </p>
-            </div>
-            <div class="process-step__line" aria-hidden="true"></div>
-          </li>
-
-          <li class="process-step reveal reveal--delay-2" id="step-strategy">
-            <div class="process-step__number" aria-hidden="true">02</div>
-            <div class="process-step__content">
-              <h3 class="process-step__title">Arquitectura de Contenido</h3>
-              <p class="process-step__description">
-                Diseñamos la estructura editorial completa: qué publicar, en qué formato,
-                en qué canal, con qué frecuencia y con qué objetivo de conversión.
-                No es un calendario de redes sociales. Es un sistema de comunicación
-                construido sobre el comportamiento real de tu cliente ideal.
-              </p>
-            </div>
-            <div class="process-step__line" aria-hidden="true"></div>
-          </li>
-
-          <li class="process-step reveal reveal--delay-3" id="step-production">
-            <div class="process-step__number" aria-hidden="true">03</div>
-            <div class="process-step__content">
-              <h3 class="process-step__title">Producción Acelerada</h3>
-              <p class="process-step__description">
-                Ejecutamos la producción de contenido con un protocolo de entrega de 72
-                horas por pieza. Copywriting de alto impacto, diseño editorial consistente
-                y adaptación a cada formato y plataforma. Sin cuellos de botella,
-                sin aprobaciones eternas, sin excusas.
-              </p>
-            </div>
-            <div class="process-step__line" aria-hidden="true"></div>
-          </li>
-
-          <li class="process-step reveal reveal--delay-1" id="step-distribution">
-            <div class="process-step__number" aria-hidden="true">04</div>
-            <div class="process-step__content">
-              <h3 class="process-step__title">Distribución con Precisión</h3>
-              <p class="process-step__description">
-                El mejor contenido publicado en el canal equivocado no genera resultados.
-                Activamos cada pieza en los canales donde vive realmente tu audiencia,
-                con la segmentación y el timing adecuados para maximizar el alcance
-                orgánico y el retorno de la inversión publicitaria.
-              </p>
-            </div>
-            <div class="process-step__line" aria-hidden="true"></div>
-          </li>
-
-          <li class="process-step reveal reveal--delay-2" id="step-optimization">
-            <div class="process-step__number" aria-hidden="true">05</div>
-            <div class="process-step__content">
-              <h3 class="process-step__title">Optimización Continua</h3>
-              <p class="process-step__description">
-                Medimos todo. Cada semana revisamos qué funciona y qué no, ajustamos
-                la estrategia basándonos en datos reales y escalamos lo que genera
-                resultados. Tu sistema de contenido mejora constantemente porque aprende
-                de cada interacción con tu audiencia.
-              </p>
-            </div>
-          </li>
-
-        </ol>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 5 · DIFERENCIAL
-    ============================================================ -->
-    <section class="differential" id="differential" aria-labelledby="differential-title">
-      <div class="differential__container container">
-
-        <header class="section-header section-header--centered reveal">
-          <span class="section-header__number" aria-hidden="true">05</span>
-          <div class="section-header__content">
-            <p class="section-header__eyebrow">El Diferencial</p>
-          </div>
-        </header>
-
-        <div class="differential__statement reveal reveal--delay-1">
-          <h2 class="differential__title" id="differential-title">
-            No somos una agencia<br />
-            <em>tradicional.</em>
-          </h2>
-        </div>
-
-        <div class="differential__columns reveal reveal--delay-2">
-          <div class="differential__column">
-            <p>
-              Las agencias tradicionales crean contenido. Nosotros construimos sistemas
-              de crecimiento. La diferencia no es semántica: es estructural.
-            </p>
-            <p>
-              Una agencia produce para entregarte piezas. Nosotros diseñamos para que
-              cada pieza sea un engranaje de una máquina más grande cuyo único objetivo
-              es generar demanda real y medible para tu negocio.
-            </p>
-          </div>
-          <div class="differential__column">
-            <p>
-              Trabajamos con un número limitado de clientes al mismo tiempo porque la
-              profundidad de nuestro trabajo requiere atención genuina. No somos
-              una fábrica de contenido. Somos tu equipo de estrategia creativa
-              integrado en tu operación.
-            </p>
-            <p>
-              Cada proyecto empieza con una pregunta: <em>¿cuánto cuesta hoy adquirir
-              un cliente y cuánto debería costar?</em> Todo lo que construimos
-              tiene como norte reducir ese número.
-            </p>
-          </div>
-        </div>
-
-        <div class="differential__badges reveal reveal--delay-3">
-          <div class="badge" id="badge-system">
-            <span class="badge__icon" aria-hidden="true">◆</span>
-            <span class="badge__text">Orientado a sistemas</span>
-          </div>
-          <div class="badge" id="badge-data">
-            <span class="badge__icon" aria-hidden="true">◆</span>
-            <span class="badge__text">Basado en datos</span>
-          </div>
-          <div class="badge" id="badge-speed">
-            <span class="badge__icon" aria-hidden="true">◆</span>
-            <span class="badge__text">Velocidad de ejecución</span>
-          </div>
-          <div class="badge" id="badge-results">
-            <span class="badge__icon" aria-hidden="true">◆</span>
-            <span class="badge__text">Resultados medibles</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 6 · SERVICIOS
-    ============================================================ -->
-    <section class="services" id="services" aria-labelledby="services-title">
-      <div class="services__container container">
-
-        <header class="section-header reveal">
-          <span class="section-header__number" aria-hidden="true">06</span>
-          <div class="section-header__content">
-            <p class="section-header__eyebrow">El Arsenal</p>
-            <h2 class="section-header__title" id="services-title">
-              Ocho capacidades.<br />Un solo objetivo.
-            </h2>
-          </div>
-        </header>
-
-        <div class="services__grid">
-
-          <article class="service-card reveal reveal--delay-1" id="service-card-copywriting">
-            <div class="service-card__index" aria-hidden="true">01</div>
-            <h3 class="service-card__title">Copywriting de Conversión</h3>
-            <p class="service-card__description">
-              Textos que venden sin vender. Emails, landing pages, propuestas, guiones
-              y anuncios escritos con la psicología del comprador en mente.
-              Cada palabra tiene un trabajo: mover al lector un paso más cerca de la decisión.
-            </p>
-            <span class="service-card__tag">Copy · Ventas</span>
-          </article>
-
-          <article class="service-card reveal reveal--delay-2" id="service-card-linkedin">
-            <div class="service-card__index" aria-hidden="true">02</div>
-            <h3 class="service-card__title">Estrategia LinkedIn B2B</h3>
-            <p class="service-card__description">
-              Posicionamiento de marca personal y corporativa en el canal de mayor
-              retorno para negocios B2B. Contenido editorial que construye autoridad,
-              genera conversaciones relevantes y abre oportunidades de negocio de forma orgánica.
-            </p>
-            <span class="service-card__tag">B2B · Autoridad</span>
-          </article>
-
-          <article class="service-card reveal reveal--delay-3" id="service-card-email">
-            <div class="service-card__index" aria-hidden="true">03</div>
-            <h3 class="service-card__title">Email Marketing Automatizado</h3>
-            <p class="service-card__description">
-              Secuencias de nutrición que convierten suscriptores en clientes sin
-              intervención manual. Diseñamos el flujo completo: bienvenida, educación,
-              consideración y cierre, con segmentación basada en comportamiento real.
-            </p>
-            <span class="service-card__tag">Email · Automatización</span>
-          </article>
-
-          <article class="service-card reveal reveal--delay-1" id="service-card-funnel">
-            <div class="service-card__index" aria-hidden="true">04</div>
-            <h3 class="service-card__title">Diseño de Embudos de Conversión</h3>
-            <p class="service-card__description">
-              Arquitectura completa del recorrido del cliente: desde el primer contacto
-              hasta el cierre. Landing pages, páginas de captura, ofertas de entrada
-              y optimización de cada punto de fricción en el proceso de compra.
-            </p>
-            <span class="service-card__tag">Funnels · UX</span>
-          </article>
-
-          <article class="service-card reveal reveal--delay-2" id="service-card-ads">
-            <div class="service-card__index" aria-hidden="true">05</div>
-            <h3 class="service-card__title">Campañas de Paid Media</h3>
-            <p class="service-card__description">
-              Gestión de inversión publicitaria en Meta Ads y Google Ads con enfoque
-              en ROAS real, no en métricas de vanidad. Creamos los anuncios, optimizamos
-              las audiencias y escalamos lo que funciona con base en datos de conversión.
-            </p>
-            <span class="service-card__tag">Ads · ROAS</span>
-          </article>
-
-          <article class="service-card reveal reveal--delay-3" id="service-card-seo">
-            <div class="service-card__index" aria-hidden="true">06</div>
-            <h3 class="service-card__title">Contenido SEO de Autoridad</h3>
-            <p class="service-card__description">
-              Artículos de largo aliento diseñados para posicionarse en búsquedas de
-              intención comercial alta. Investigación de palabras clave, estructura
-              editorial y distribución que convierte tráfico orgánico en pipeline de ventas.
-            </p>
-            <span class="service-card__tag">SEO · Tráfico orgánico</span>
-          </article>
-
-          <article class="service-card reveal reveal--delay-1" id="service-card-video">
-            <div class="service-card__index" aria-hidden="true">07</div>
-            <h3 class="service-card__title">Producción de Contenido en Video</h3>
-            <p class="service-card__description">
-              Guionización, dirección y edición de videos cortos y largos para YouTube,
-              Instagram y LinkedIn. Desde reels de 30 segundos hasta documentales de
-              marca. El video es el formato de mayor alcance orgánico: lo optimizamos
-              para conversión desde el primer fotograma.
-            </p>
-            <span class="service-card__tag">Video · Producción</span>
-          </article>
-
-          <article class="service-card reveal reveal--delay-2" id="service-card-analytics">
-            <div class="service-card__index" aria-hidden="true">08</div>
-            <h3 class="service-card__title">Analítica y Reportes de Performance</h3>
-            <p class="service-card__description">
-              Dashboard de métricas customizado para tu operación. Seguimiento semanal
-              de KPIs que importan: costo por lead, tasa de conversión por canal,
-              ROI por pieza de contenido y velocidad del embudo. Tomamos decisiones
-              con datos, no con intuición.
-            </p>
-            <span class="service-card__tag">Analytics · KPIs</span>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 7 · CONTACTO / CTA FINAL
-    ============================================================ -->
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact__container container">
-
-        <header class="section-header section-header--inverted section-header--centered reveal">
-          <span class="section-header__number" aria-hidden="true">07</span>
-        </header>
-
-        <div class="contact__content reveal reveal--delay-1">
-          <h2 class="contact__title" id="contact-title">
-            ¿Listo para dejar<br />
-            de improvisar?
-          </h2>
-          <p class="contact__description">
-            El primer paso es una conversación. Sin pitch de ventas, sin presiones.
-            Analizamos tu situación actual y te decimos honestamente si podemos
-            ayudarte y cómo.
-          </p>
-          <div class="contact__actions">
-            <a href="mailto:hola@leadgenerator.io" class="btn btn--white btn--large" id="contact-email-btn">
-              Escribir a hola@leadgenerator.io
+    <header class="header">
+        <div class="container header__nav">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                <span>LEADGENERATOR</span>
             </a>
-            <a href="#how-it-works" class="btn btn--outline-white btn--large" id="contact-process-btn">
-              Ver el proceso primero
-            </a>
-          </div>
+            <ul class="nav-links">
+                <li><a href="#problem" class="nav-link">Problema</a></li>
+                <li><a href="#how-it-works" class="nav-link">Proceso</a></li>
+                <li><a href="#services" class="nav-link">Servicios</a></li>
+                <li><a href="#contact" class="btn-magnetic" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Let's Go</a></li>
+            </ul>
         </div>
+    </header>
 
-        <div class="contact__editorial reveal reveal--delay-2" aria-hidden="true">
-          <p class="contact__editorial-text">LeadGenerator</p>
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container">
+                <div class="floating-element" style="top: 20%; left: 10%; font-size: 2rem;">🚀</div>
+                <div class="floating-element" style="top: 15%; right: 15%; font-size: 1.5rem;">📊</div>
+                <div class="floating-element" style="bottom: 30%; left: 5%; font-size: 2rem;">⚡</div>
+                
+                <h1 class="hero__title reveal">Sistema de<br>Performance<br>Creativo</h1>
+                <p class="hero__subtitle reveal">Creamos contenido estratégico y disruptivo que convierte tu audiencia en una máquina de leads insaciable.</p>
+                <div class="reveal">
+                    <a href="#contact" class="btn-magnetic">Descubrir el sistema</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEM SECTION (BENTO GRID) -->
+        <section class="problem" id="problem">
+            <div class="container">
+                <h2 class="section-title reveal">El Diagnóstico</h2>
+                <div class="bento-grid">
+                    <article class="bento-item bento-item--large reveal">
+                        <h3>No saben qué crear.</h3>
+                        <p>Contenido sin estrategia es solo ruido. Diseñamos piezas que realmente mueven la aguja de tu negocio.</p>
+                    </article>
+                    <article class="bento-item reveal">
+                        <h3>Métricas <br>Invisibles.</h3>
+                        <p>Si no se mide, no existe. Dashboard real-time para control total.</p>
+                    </article>
+                    <article class="bento-item reveal">
+                        <h3>Agencias <br>Lentas.</h3>
+                        <p>En performance, la velocidad es dinero. Entrega en 72hs garantizada.</p>
+                    </article>
+                    <article class="bento-item bento-item--large reveal" style="background: rgba(0, 122, 255, 0.1);">
+                        <h3>Ejecución con Precisión.</h3>
+                        <p>Automatizando el crecimiento paso tras paso sin fricción.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS (PROCESO ANIMADO) -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title reveal" style="text-align: center;">Tu Proceso de Escalado</h2>
+                <div class="process__list">
+                    <div class="process__step reveal" id="step-1">
+                        <div class="process__number">1</div>
+                        <h4>Estrategia</h4>
+                        <p>Auditoría de performance cruda.</p>
+                    </div>
+                    <div class="process__step reveal" id="step-2">
+                        <div class="process__number">2</div>
+                        <h4>Guion</h4>
+                        <p>Copywriting de alta conversión.</p>
+                    </div>
+                    <div class="process__step reveal" id="step-3">
+                        <div class="process__number">3</div>
+                        <h4>Producción</h4>
+                        <p>Contenido nativo de alto nivel.</p>
+                    </div>
+                    <div class="process__step reveal" id="step-4">
+                        <div class="process__number">4</div>
+                        <h4>Distribución</h4>
+                        <p>Pads Media & Ads de precisión.</p>
+                    </div>
+                    <div class="process__step reveal" id="step-5">
+                        <div class="process__number">5</div>
+                        <h4>Escalado</h4>
+                        <p>Optimización basada en ROI real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title reveal">El Arsenal</h2>
+                <div class="services__grid">
+                    <div class="service-card reveal"><i>🎥</i> <h4>Producción</h4><p>Grabación y setup profesional.</p></div>
+                    <div class="service-card reveal"><i>✍️</i> <h4>Guionado</h4><p>Narrativas que venden sin vender.</p></div>
+                    <div class="service-card reveal"><i>✂️</i> <h4>Edición</h4><p>Dinámica, moderna y orientada a retención.</p></div>
+                    <div class="service-card reveal"><i>🔄</i> <h4>Renovación</h4><p>Refresh constante de piezas ganadoras.</p></div>
+                    <div class="service-card reveal"><i>📈</i> <h4>Dashboard</h4><p>Tus números en tiempo real.</p></div>
+                    <div class="service-card reveal"><i>💡</i> <h4>Recomendaciones</h4><p>Feedback estratégico cada semana.</p></div>
+                    <div class="service-card reveal"><i>⚙️</i> <h4>Gestión</h4><p>Nos encargamos de todo el flujo.</p></div>
+                    <div class="service-card reveal"><i>💬</i> <h4>Comunicación</h4><p>Soporte VIP vía Slack/WhatsApp.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIFFERENTIAL SECTION -->
+        <section class="differential" id="differential">
+            <div class="container">
+                <div class="gradient-block reveal">
+                    <div class="gradient-block__inner">
+                        <h2 class="gradient-block__title">No somos una agencia tradicional,<br>somos un sistema.</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="justify-content: center; transform: scale(1.5); margin-bottom: 2rem;">
+                <div class="logo-icon"></div>
+                <span>LEADGENERATOR</span>
+            </div>
+            <p class="footer__title">Crecimiento y Simplicidad.</p>
+            <div class="reveal">
+                <a href="mailto:hola@lg.io" class="btn-magnetic">Empezar ahora</a>
+            </div>
+            <p style="margin-top: 4rem; font-size: 0.8rem; color: var(--text-muted);">&copy; 2026 LeadGenerator - System of performance.</p>
         </div>
+    </footer>
 
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="site-footer__container container">
-      <div class="site-footer__brand">
-        <span class="site-footer__logo-mark" aria-hidden="true">LG</span>
-        <span class="site-footer__name">LeadGenerator</span>
-      </div>
-      <p class="site-footer__tagline">Sistema de Performance Creativo.</p>
-      <p class="site-footer__copy">&copy; <span id="footer-year"></span> LeadGenerator. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- ============================================================
-       THEME SWITCHER UI
-  ============================================================ -->
-  <aside class="theme-switcher" id="theme-switcher" aria-label="Selector de temas">
-    <button class="theme-switcher__toggle" id="theme-toggle" aria-label="Abrir selector de estilos">
-      <span class="theme-switcher__toggle-icon">🎨</span>
-      <span class="theme-switcher__toggle-text">Estilos</span>
-    </button>
-    
-    <div class="theme-switcher__content">
-      <header class="theme-switcher__header">
-        <h3>Explorador de Estilos</h3>
-        <p>Selecciona un template para aplicarlo instantáneamente al sitio.</p>
-        <button class="theme-switcher__close" id="theme-close">&times;</button>
-      </header>
-      
-      <nav class="theme-switcher__grid" id="theme-grid">
-        <!-- Los temas se cargarán dinámicamente vía JS -->
-      </nav>
-    </div>
-  </aside>
-
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
